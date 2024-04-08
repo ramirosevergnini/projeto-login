@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="estilo/style.css">
+    <link rel="stylesheet" href="estilo/media-queries.css">
 </head>
 <body>
     <main>
@@ -13,17 +15,20 @@
             <div id="formulario">
                 <h1>Login</h1>
                 <p>Seja bem-vindo(a) novamente.  <br>Faça Login para acessar sua conta.</p>
-                <form action="login.php" method="post"></form>
-                <div id="caixasdeenvio">
-                    <label for="iemail">Email:</label>
-                    <input type="email" name="email" id="iemail" required><br>
-                    <label for="isenha">Senha:</label>
-                    <input type="password" name="senha" id="isenha">
-                </div>
-                <div id="submit">
-                    <input type="submit" value="Entrar"> <br>
-                    <input type="submit" value="Esqueci minha senha">
-                </div>
+                <form action="login.php" method="post">
+
+                
+                    <div id="caixasdeenvio">
+                        <label for="iemail">E-mail:</label>
+                        <input type="email" name="email" id="iemail" placeholder="seuemail@gmail.com" required autocomplete="email"><br>
+                        <label for="isenha">Senha:</label>
+                        <input type="password" name="senha" id="isenha" placeholder="********" minlength="8" required autocomplete="current-password">
+                    </div>
+                    <div id="submit">
+                        <input id="firstsubmit"  type="submit" value="Entrar"> <br>
+                        <input type="submit" value="Esqueci minha senha">
+                    </div>
+                </form>
             </div>
 
             <div id="imagem">
