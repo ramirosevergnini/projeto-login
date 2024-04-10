@@ -15,7 +15,7 @@
             <div id="formulario">
                 <h1>Login</h1>
                 <p>Seja bem-vindo(a) novamente.  <br>Faça Login para acessar sua conta.</p>
-                <form action="login.php" method="post">
+                <form action="login.php" method="post" id="loginForm">
 
                 
                     <div id="caixasdeenvio">
@@ -23,6 +23,7 @@
                         <input type="email" name="email" id="iemail" placeholder="seuemail@gmail.com" required autocomplete="email"><br>
                         <label for="isenha">Senha:</label>
                         <input type="password" name="senha" id="isenha" placeholder="********" minlength="8" required autocomplete="current-password">
+                        <span id="senhaError" class="mensagemError"></span>
                     </div>
                     <div id="submit">
                         <input id="firstsubmit"  type="submit" value="Entrar"> <br>
@@ -37,5 +38,24 @@
 
         </section>
     </main>
+
+    <script>
+        function validarSenha(event){
+            var senhaInput = document.getElementById("isenha");
+            var senha = senhaInput.value;
+
+            var temLetra = /[a-zA-Z]/.test(senha);
+            var temNumero = /\d/.test(senha);
+
+            if(!temNumero || !temLetra){
+                senhaError.textContent="A senha deve ter caracteres e números!"
+                event.preventDefault();
+            }else{
+                senhaError.textContent="";
+            }
+        }
+        var loginForm = document.getElementById("loginForm");
+        loginForm.addEventListener("submit", validarSenha);
+    </script>
 </body>
 </html>
